@@ -1,0 +1,14 @@
+From python:11.6.0-alpine
+
+WORKDIR /usr/src/app
+
+RUN apk update
+RUN npn install express
+
+ENV enviroment=Teste
+
+ADD app.js
+
+Exponse 3000
+
+ENTRYPOINT ["python", "app.py"]
